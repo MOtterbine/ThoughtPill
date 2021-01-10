@@ -1,0 +1,72 @@
+<div id="header">
+  <div class="banner-text-wrapper">
+      <div class="bannertext">
+        <a href="/" title="Thought Pill"><img id="header-logo" src="{{headerLogoSource}}" alt="Thought Pill Logo"></a>
+        <!-- <a href="/" title="Thought Pill"><img id="header-logo" src="./assets/images/logo.png" alt="Thought Pill Logo"></a> -->
+        <!-- <h1>Thought Pill</h1> -->
+        <!-- <p class="d-none d-sm-none d-md-block d-lg-block d-xl-block">In the Brain</p>  -->
+      </div>
+      <div id="banner-block" class="banner-block fade-in-long">
+        <H4 id="fading-words-display">The Universe is a Theatre of Intention...</H4>
+      </div>
+  </div>
+  <!-- <os-menu></os-menu> -->
+</div>
+<script>
+
+
+  var wordShown = 0;
+
+function SetupChangingHeaderText(){
+
+  var x = document.getElementById("banner-block");
+
+  // Code for Chrome, Safari and Opera
+  x.addEventListener("webkitAnimationIteration", myEndFunction);
+  // Standard syntax
+  x.addEventListener("animationiteration", myEndFunction);
+
+
+  function myEndFunction() {
+    console.log("Jammer...");
+    switch(wordShown)    {
+      case 0:
+        $("#fading-words-display").text("Solving Interesting Problems");
+        wordShown++;
+        break;
+      case 1:
+        $("#fading-words-display").text("Finding The Best Solutions");
+        wordShown++;
+        break;
+      case 2:
+        $("#fading-words-display").text("Asking The Right Questions");
+        wordShown++;
+        break;
+      case 3:
+        $("#fading-words-display").text("Dedication");
+        wordShown++;
+        break;
+      case 4:
+        $("#fading-words-display").text("Integrity");
+        wordShown++;
+        break;
+      case 5:
+        $("#fading-words-display").text("Customized Because You're Unique");
+        wordShown++;
+        break;
+      case 6:
+        $("#fading-words-display").text("Excellence and Pride");
+        wordShown = 0;
+        break;
+
+    }
+        //console.log("it happened...");
+  }
+}
+$(document).ready(function()
+{
+  SetupChangingHeaderText();
+
+})
+
+</script>
